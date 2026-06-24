@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Games {
+  GameID   String  @id
+  players  String? @db.VarChar(15)
+  roomcode String? @db.VarChar(6)
+}
